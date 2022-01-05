@@ -43,45 +43,10 @@ function open_door(pos, world)
 end
 
 mod:block {
-	id = "door_wood_upper",
-	name = "Wooden Door (WIP)",
-	tiles = "door_wood_upper.png",
-	inventory_image = "door_wood.png",
+	id = "fence_gate",
+	name = "Fence Gate",
+	tiles = "oak_planks.png",
 	is_collidable = false,
-	groups = {
-		ci_ignore = 1,
-		om_material_wood = 1
-	},
-
-	is_rotatable = true,
-	is_opaque = false,
-
-	draw_type = "boundingbox",
-	bounding_box = {13 / 16, 0, 0, 3 / 16, 1, 1},
-
-	on_block_placed = function(pos, world)
-		world:add_block_data(pos.x, pos.y, pos.z, 0, 0)
-	end,
-
-	on_block_destroyed = function(pos, world)
-		local lower_block_id = openminer.registry:get_block_from_string("default:door_wood_lower"):id()
-		if world:get_block(pos.x, pos.y, pos.z - 1) == lower_block_id then
-			world:set_block(pos.x, pos.y, pos.z - 1, 0)
-		end
-	end,
-
-	on_block_activated = function(pos, block, player, world, client, server)
-		open_door(pos, world)
-		open_door({x = pos.x, y = pos.y, z = pos.z - 1}, world)
-	end
-}
-
-mod:block {
-	id = "door_wood_lower",
-	name = "Wooden Door (WIP)",
-	tiles = "door_wood_lower.png",
-	is_collidable = false,
-	inventory_image = "door_wood.png",
 	groups = {
 		om_material_wood = 1
 	},

@@ -26,9 +26,20 @@
 --
 
 mod:block {
+	id = "bedrock",
+	name = "Bedrock",
+	tiles = {"bedrock.png"},
+	
+	hardness = 18000000,
+	
+	harvest_requirements = Capability.Pickaxe,
+}
+
+mod:block {
 	id = "dirt",
 	name = "Dirt",
-	tiles = "dirt.png",
+	tiles = {"dirt_top.png", "dirt_bottom.png", "dirt.png"},
+	
 	groups = {
 		om_material_dirt = 1,
 	},
@@ -40,6 +51,15 @@ mod:block {
 	tiles = "cobblestone.png",
 
 	hardness = 2,
+	harvest_requirements = Capability.Pickaxe,
+}
+
+mod:block {
+	id = "plastic",
+	name = "Plastic",
+	tiles = "plastic.png",
+
+	hardness = 0.1,
 	harvest_requirements = Capability.Pickaxe,
 }
 
@@ -129,7 +149,7 @@ mod:block {
 	hardness = 3,
 	harvest_requirements = Capability.Pickaxe,
 	item_drop = {
-		id = mod:id()..":coal",
+		id = mod:id()..":coal_ore",
 		amount = 1
 	},
 }
@@ -181,7 +201,10 @@ mod:block {
 	color_multiplier = {129, 191, 91, 255},
 	hardness = 0,
 	draw_type = "xshape",
-	item_drop = {},
+	item_drop = {
+		id = mod:id()..":seeds",
+		amount = 1
+	},
 }
 
 mod:block {
@@ -211,11 +234,29 @@ mod:block {
 }
 
 mod:block {
+	id = "oak_presure_plate",
+	name = "Oak Presure Plate",
+	tiles = "oak_planks.png",
+	groups = {
+		om_material_wood = 1,
+		om_fuel = 300,
+	},
+	
+	hardness = 0.5,
+
+	draw_type = "boundingbox",
+	is_opaque = false,
+
+	bounding_box = {1 / 16, 1 / 16, 0, 14 / 16, 14 / 16, 1 / 16}
+}
+
+mod:block {
 	id = "oak_slab",
 	name = "Oak Wood Slab",
 	tiles = "oak_planks.png",
 	groups = {
 		om_material_wood = 1,
+		om_fuel = 300,
 	},
 
 	draw_type = "boundingbox",
@@ -248,6 +289,25 @@ mod:block {
 	id = "netherrack",
 	name = "Netherrack",
 	tiles = "netherrack.png",
+	harvest_requirements = Capability.Pickaxe,
+}
+
+mod:block {
+	id = "nether_quartz_ore",
+	name = "Nether Quartz Ore",
+	tiles = "nether_quartz_ore.png",
+	harvest_requirements = Capability.Pickaxe,
+	
+	item_drop = {
+		id = mod:id()..":quartz",
+		amount = 1,
+	},
+}
+
+mod:block {
+	id = "quartz_block",
+	name = "Quartz Block",
+	tiles = "quartz_block.png",
 	harvest_requirements = Capability.Pickaxe,
 }
 
@@ -317,7 +377,7 @@ mod:block {
 	name = "Obsidian",
 	tiles = "obsidian.png",
 
-	hardness = 8,
+	hardness = 50,
 	harvest_requirements = Capability.Pickaxe,
 }
 
@@ -410,7 +470,7 @@ mod:block {
 	},
 
 	tick_randomly = true,
-	tick_probability = 0.01,
+	tick_probability = 0.001,
 
 	on_tick = function(pos, block, chunk, world)
 		local block_param = world:get_data(pos.x, pos.y, pos.z)
@@ -463,7 +523,7 @@ mod:block {
 	},
 
 	tick_randomly = true,
-	tick_probability = 0.01,
+	tick_probability = 0.001,
 
 	on_tick = function(pos, block, chunk, world)
 		local block_param = world:get_data(pos.x, pos.y, pos.z)
@@ -489,7 +549,7 @@ mod:block {
 
 mod:block {
 	id = "torch",
-	name = "Torch (WIP)",
+	name = "Torch",
 	tiles = "torch_on.png",
 
 	is_light_source = true,
@@ -497,6 +557,24 @@ mod:block {
 	is_opaque = false,
 
 	inventory_image = "../blocks/torch_on.png",
+
+	draw_type = "boundingbox",
+
+	bounding_box = {7 / 16, 7 / 16, 0, 2 / 16, 2 / 16, 10 / 16},
+
+	hardness = 0
+}
+
+mod:block {
+	id = "redstone_torch",
+	name = "Redstone Torch",
+	tiles = "redstone_torch.png",
+
+	is_light_source = true,
+	is_collidable = false,
+	is_opaque = false,
+
+	inventory_image = "../blocks/redstone_torch.png",
 
 	draw_type = "boundingbox",
 
@@ -534,13 +612,15 @@ mod:block {
 	name = "Ice",
 	tiles = "ice.png",
 	draw_type = "glass",
-	is_opaque = false
+	is_opaque = false,
+	harvest_requirements = Capability.Pickaxe,
 }
 
 mod:block {
 	id = "snow",
 	name = "Snow",
 	tiles = "snow.png",
+	harvest_requirements = Capability.Shovel,
 }
 
 mod:block {
@@ -710,6 +790,35 @@ mod:block {
 }
 
 mod:block {
+	id = "mud",
+	name = "Mud",
+	tiles = "dirt.png",
+	
+	draw_type = "liquid",
+	is_opaque = true,
+
+	fog_depth = 20.0,
+	fog_color = {64, 32, 0},
+	groups = {
+		om_material_dirt = 1,
+	},
+}
+
+mod:block {
+	id = "oil",
+	name = "Oil",
+	tiles = "coal_block.png",
+	is_collidable = false,
+	
+	is_opaque = true,
+	item_drop = {
+		id = mod:id()..":bucket_oil",
+		amount = 1
+	},
+
+}
+
+mod:block {
 	id = "red_sandstone",
 	name = "Red Sandstone",
 	tiles = {"red_sandstone_top.png", "red_sandstone_bottom.png", "red_sandstone_normal.png"},
@@ -755,6 +864,12 @@ mod:block {
 }
 
 mod:block {
+	id = "scaffolding",
+	name = "Scaffolding",
+	tiles = {"scaffolding_top.png", "scaffolding_bottom.png", "scaffolding_side.png"},
+}
+
+mod:block {
 	id = "end_stone",
 	name = "End Stone",
 	tiles = "end_stone.png",
@@ -778,6 +893,9 @@ mod:block {
 	harvest_requirements = Capability.Pickaxe,
 }
 
+
 dofile("blocks/workbench.lua")
+dofile("blocks/iron_workbench.lua")
 dofile("blocks/furnace.lua")
 dofile("blocks/door.lua")
+dofile("blocks/fence_gate.lua")

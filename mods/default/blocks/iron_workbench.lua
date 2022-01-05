@@ -26,24 +26,22 @@
 --
 local modpath = mod:path()
 
-mod:key {
-	id = "inventory",
-	name = "Inventory",
-	default_key = "E",
-	
-	callback = function(keyID, client, screen_width, screen_height, gui_scale)
-		local gui = LuaGUI.new(keyID)
+mod:block {
+	id = "iron_workbench",
+	name = "Iron Workbench",
+	tiles = {"crafting_table_top.png", "iron_block.png", "iron_block.png", "iron_block.png"},
+	harvest_requirements = Capability.Pickaxe,
+
+	hardness = 5,
+	on_block_placed = function(pos, world)
+		world:add_block_data(pos.x, pos.y, pos.z, 4, 4)
+	end,
+
+	on_block_activated = function(pos, block, player, world, client, server)
+		local gui = LuaGUI.new()
 
 		gui:set_size(176, 166)
 		gui:set_centered(true)
-
-		gui:image {
-			name = "img_background",
-			pos = {x = 0, y = 0},
-
-			texture = modpath .. "/textures/gui/inventory.png",
-			clip = {x = 0, y = 0, width = 176, height = 166},
-		}
 
 		gui:inventory {
 			name = "inv_main",
@@ -59,7 +57,7 @@ mod:key {
 
 			size = {x = 9, y = 3},
 
-			shift_destination = "inv_hotbar,inv_main",
+			shift_destination = "inv_crafting",
 		}
 
 		gui:inventory {
@@ -76,23 +74,30 @@ mod:key {
 
 			size = {x = 9, y = 1},
 
-			shift_destination = "inv_main,inv_hotbar",
+			shift_destination = "inv_crafting",
 		}
-		
+
 		gui:crafting {
 			name = "inv_crafting",
-			pos = {x = 97, y = 17},
-			result_pos = {x = 97 + 56, y = 17 + 10},
+			pos = {x = 29, y = 16},
+			result_pos = {x = 123, y = 34},
 
 			inventory = {
-				source = "temp",
-				size = 2,
+				source = "block",
+				block = {x = pos.x, y = pos.y, z = pos.z},
 			},
 
 			shift_destination = "inv_main,inv_hotbar",
 		}
 
-		gui:show(client)
-	end
-}
+		gui:image {
+			name = "img_background",
+			pos = {x = 0, y = 0},
 
+			texture = modpath .. "/textures/gui/workbench.png",
+			clip = {x = 0, y = 0, width = 176, height = 166},
+		}
+
+		gui:show(client)
+	end,
+}

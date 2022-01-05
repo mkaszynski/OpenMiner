@@ -100,6 +100,24 @@ mod:item {
 }
 
 mod:item {
+	id = "plastic_chunk",
+	name = "Plastic Chunk",
+	tiles = "plastic_chunk.png",
+}
+
+mod:item {
+	id = "polliester",
+	name = "Polliester",
+	tiles = "polliester.png",
+}
+
+mod:item {
+	id = "strengthend_polliester",
+	name = "Strengthend Polliester",
+	tiles = "strengthed_polliester.png",
+}
+
+mod:item {
 	id = "snowball",
 	name = "Snowball",
 	tiles = "snowball.png",
@@ -278,6 +296,13 @@ mod:item {
 	name = "Arrow",
 	tiles = "arrow.png",
 }
+
+mod:item {
+	id = "quartz",
+	name = "Quartz",
+	tiles = "quartz.png",
+}
+
 
 mod:item {
 	id = "rotten_flesh",
@@ -463,6 +488,21 @@ mod:item {
 	id = "bucket_milk",
 	name = "Milk Bucket",
 	tiles = "bucket_milk.png",
+}
+
+mod:item {
+	id = "bucket_oil",
+	name = "Oil Bucket",
+	tiles = "bucket_oil.png",
+}
+
+mod:item {
+	id = "bucket_gasoline",
+	name = "Gasoline Bucket",
+	tiles = "bucket_gasoline.png",
+	groups = {
+		om_fuel = 6400,
+	}
 }
 
 mod:item {

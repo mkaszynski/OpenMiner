@@ -139,6 +139,25 @@ mod:crafting_recipe {
 	}
 }
 
+-- Torch
+mod:crafting_recipe {
+	result = {
+		id = "default:torch",
+		amount = 4
+	},
+
+	pattern = {
+		"#",
+		"|"
+	},
+
+	keys = {
+		['#'] = "default:coal",
+		['|'] = "default:stick",
+	}
+}
+
+
 -- Stone Hoe
 mod:crafting_recipe {
 	result = {
@@ -211,6 +230,139 @@ mod:crafting_recipe {
 
 	keys = {
 		['#'] = "default:cobblestone",
+		['|'] = "default:stick",
+	}
+}
+
+-- Stone Hoe
+mod:crafting_recipe {
+	result = {
+		id = "default:stone_hoe",
+		amount = 1
+	},
+
+	pattern = {
+		"##",
+		" |",
+		" |"
+	},
+
+	keys = {
+		['#'] = "default:cobblestone",
+		['|'] = "default:stick",
+	}
+}
+
+-- Stone Pickaxe
+mod:crafting_recipe {
+	result = {
+		id = "default:stone_pickaxe",
+		amount = 1
+	},
+
+	pattern = {
+		"###",
+		" | ",
+		" | "
+	},
+
+	keys = {
+		['#'] = "default:cobblestone",
+		['|'] = "default:stick",
+	}
+}
+
+-- Strengthend Polliester Pickaxe
+mod:crafting_recipe {
+	result = {
+		id = "default:strengthend_polliester_pickaxe",
+		amount = 1
+	},
+
+	pattern = {
+		"###",
+		" | ",
+		" | "
+	},
+
+	keys = {
+		['#'] = "default:strengthend_polliester",
+		['|'] = "default:stick",
+	}
+}
+
+-- Strengthend Polliester Hoe
+mod:crafting_recipe {
+	result = {
+		id = "default:strengthend_polliester_hoe",
+		amount = 1
+	},
+
+	pattern = {
+		"##",
+		" |",
+		" |"
+	},
+
+	keys = {
+		['#'] = "default:strengthend_polliester",
+		['|'] = "default:stick",
+	}
+}
+
+-- Strengthend Polliester Axe
+mod:crafting_recipe {
+	result = {
+		id = "default:strengthend_polliester_axe",
+		amount = 1
+	},
+
+	pattern = {
+		"##",
+		"#|",
+		" |"
+	},
+
+	keys = {
+		['#'] = "default:strengthend_polliester",
+		['|'] = "default:stick",
+	}
+}
+
+-- Strengthend Polliester Shovel
+mod:crafting_recipe {
+	result = {
+		id = "default:strengthend_polliester_shovel",
+		amount = 1
+	},
+
+	pattern = {
+		"#",
+		"|",
+		"|"
+	},
+
+	keys = {
+		['#'] = "default:strengthend_polliester",
+		['|'] = "default:stick",
+	}
+}
+
+-- Strengthend Polliester Sword
+mod:crafting_recipe {
+	result = {
+		id = "default:strengthend_polliester_sword",
+		amount = 1
+	},
+
+	pattern = {
+		"#",
+		"#",
+		"|"
+	},
+
+	keys = {
+		['#'] = "default:strengthend_polliester",
 		['|'] = "default:stick",
 	}
 }
@@ -501,6 +653,38 @@ mod:crafting_recipe {
 	}
 }
 
+-- Bucket Oil
+mod:crafting_recipe {
+	result = {
+		id = "default:bucket_oil",
+		amount = 1
+	},
+
+	pattern = {
+		"#",
+	},
+
+	keys = {
+		['#'] = "default:oil",
+	}
+}
+
+-- Plastic
+mod:crafting_recipe {
+	result = {
+		id = "default:plastic",
+		amount = 9
+	},
+
+	pattern = {
+		"#"
+	},
+
+	keys = {
+		['#'] = "default:bucket_oil",
+	}
+}
+
 -- Stick
 mod:crafting_recipe {
 	result = {
@@ -579,6 +763,12 @@ mod:smelting_recipe {
 	output = {id = "default:gold_ingot", amount = 1}
 }
 
+-- Diomond
+mod:smelting_recipe {
+	input = {id = "default:diamond_ore", amount = 1},
+	output = {id = "default:diamond", amount = 1}
+}
+
 -- Iron Ingot
 mod:smelting_recipe {
 	input = {id = "default:redstone_ore", amount = 1},
@@ -621,6 +811,12 @@ mod:smelting_recipe {
 	output = {id = "default:brick", amount = 1}
 }
 
+-- Gasoline
+mod:smelting_recipe {
+	input = {id = "default:bucket_oil", amount = 1},
+	output = {id = "default:bucket_gasoline", amount = 1}
+}
+
 -- Nether Brick
 mod:smelting_recipe {
 	input = {id = "default:netherrack", amount = 1},
@@ -643,6 +839,12 @@ mod:smelting_recipe {
 mod:smelting_recipe {
 	input = {id = "default:porkchop_raw", amount = 1},
 	output = {id = "default:porkchop_cooked", amount = 1}
+}
+
+-- Strengthend Polliester
+mod:smelting_recipe {
+	input = {id = "default:polliester", amount = 2},
+	output = {id = "default:strengthend_polliester", amount = 1}
 }
 
 -- Cooked Mutton
@@ -803,6 +1005,44 @@ mod:crafting_recipe {
 		"###"
 	},
 	keys = {["#"] = "default:coal"}
+}
+
+-- Shears
+mod:crafting_recipe {
+	result = {
+		id = "default:shears",
+		amount = 1
+	},
+	pattern = {
+		" #",
+		"# "
+	},
+	keys = {["#"] = "default:iron_ingot"}
+}
+
+-- Quartz Block
+mod:crafting_recipe {
+	result = {
+		id = "default:quartz_block",
+		amount = 1
+	},
+	pattern = {
+		"##",
+		"##"
+	},
+	keys = {["#"] = "default:quartz"}
+}
+
+-- Quartz
+mod:crafting_recipe {
+	result = {
+		id = "default:quartz",
+		amount = 4
+	},
+	pattern = {
+		"#"
+	},
+	keys = {["#"] = "default:quartz_block"}
 }
 
 -- Iron Block
@@ -973,6 +1213,48 @@ mod:crafting_recipe {
 	keys = {["#"] = "default:emerald_block"}
 }
 
+-- Plastic Chunk
+mod:crafting_recipe {
+	result = {
+		id = "default:plastic_chunk",
+		amount = 2
+	},
+	pattern = {
+		"#  #",
+		" ## ",
+		" ## ",
+		"#  #"
+	},
+	keys = {["#"] = "default:plastic"}
+}
+
+-- Polliester
+mod:crafting_recipe {
+	result = {
+		id = "default:polliester",
+		amount = 1
+	},
+	pattern = {
+		"####",
+		"####"
+	},
+	keys = {["#"] = "default:plastic_chunk"}
+}
+
+-- Iron Crafting Table
+mod:crafting_recipe {
+	result = {
+		id = "default:iron_workbench",
+		amount = 1
+	},
+	pattern = {
+		"###",
+		"###",
+		"###"
+	},
+	keys = {["#"] = "default:iron_block"}
+}
+
 
 -- End Stone Bricks
 mod:crafting_recipe {
@@ -1048,8 +1330,9 @@ mod:crafting_recipe {
 		amount = 1
 	},
 	pattern = {
-		"##",
-		"##"
+		"###",
+		"###",
+		"###"
 	},
 	keys = {["#"] = "default:slime_ball"}
 }
@@ -1264,7 +1547,7 @@ mod:crafting_recipe {
 	keys = {["#"] = "default:blaze_powder", ["@"] = "default:slime_ball"}
 }
 
--- Magma Cream
+-- Paper
 mod:crafting_recipe {
 	result = {
 		id = "default:paper",
@@ -1276,7 +1559,7 @@ mod:crafting_recipe {
 	keys = {["#"] = "default:sugar_cane"}
 }
 
--- Magma Cream
+-- Hay Block
 mod:crafting_recipe {
 	result = {
 		id = "default:hay_block",

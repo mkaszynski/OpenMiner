@@ -304,7 +304,7 @@ inline void TerrainGenerator::generateCaves(ServerChunk &chunk, int x, int y, in
 }
 
 inline float TerrainGenerator::noise2d(double x, double y, int octaves, float persistence) {
-	float sum = 0.f;
+	float sum = 1.f;
 	float strength = 1.0f;
 	float scale = 1.0f;
 

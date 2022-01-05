@@ -56,7 +56,76 @@ mod:sky {
 		},
 
 		stars = {
+			texture = "texture-star", -- FIXME: ^
 			count = 1000,
+			size = 4,
+		}
+	}
+}
+
+mod:sky {
+	id = "sky_moon",
+
+	color = {
+		day = {0, 0, 0},
+	},
+
+	fog_color = {
+		day = {0, 0, 0},
+	},
+
+	daylight_cycle = {
+		speed = 1.0
+	},
+
+	objects = {
+		sun = {
+			texture = "texture-sun", -- FIXME: Use a path instead like block attribute 'tiles'
+			size = 512,
+		},
+
+		moon = {
+			texture = "texture-earth", -- FIXME: ^
+			size = 512*4,
+		},
+
+		stars = {
+			texture = "texture-star", -- FIXME: ^
+			count = 4000,
+			size = 4,
+		}
+	}
+}
+
+mod:sky {
+	id = "sky_space",
+
+	color = {
+		day = {0, 0, 0},
+	},
+
+	fog_color = {
+		day = {0, 0, 0},
+	},
+
+	daylight_cycle = {
+		speed = 1.0
+	},
+
+	objects = {
+		sun = {
+			texture = "texture-sun", -- FIXME: Use a path instead like block attribute 'tiles'
+			size = 512,
+		},
+
+		moon = {
+			texture = "texture-earth", -- FIXME: ^
+			size = 512*0.04,
+		},
+
+		stars = {
+			texture = "texture-star", -- FIXME: ^
+			count = 4000,
 			size = 4,
 		}
 	}

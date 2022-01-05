@@ -38,6 +38,19 @@ mod:tree {
 }
 
 mod:tree {
+	id = "jungle_tree",
+
+	log_block = "default:oak_wood",
+	leaves_block = "default:oak_leaves",
+
+	trunk_height = {
+		min = 20,
+		max = 40
+	},
+}
+
+
+mod:tree {
 	id = "tree_cactus",
 
 	log_block = "default:cactus",
@@ -48,5 +61,19 @@ mod:tree {
 	},
 
 	has_leaves = false,
+}
+
+mod:tree {
+	id = "space_rock",
+
+	log_block = "default:stone",
+	leaves_block = "default:stone",
+
+	trunk_height = {
+		min = 0,
+		max = 1
+	},
+
+	has_leaves = true,
 }
 
